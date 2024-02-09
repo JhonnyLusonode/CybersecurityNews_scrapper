@@ -35,6 +35,9 @@ try:
     # Create a Document object to store the content
     doc = Document()
 
+    # Initialize news count
+    news_count = 0
+
     # Loop through the articles and extract the information
     for article in articles:
         # Check if the <a> tag exists within the <h2> tag
@@ -59,6 +62,9 @@ try:
             doc.add_paragraph(f"Link: {link}")
             doc.add_paragraph(f"Summary: {summary}")
             doc.add_paragraph('\n')  # Add some space between articles
+            
+            # Increment news count
+            news_count += 1
 
             # Introduce a delay of 2 seconds between requests
             time.sleep(2)
@@ -69,6 +75,9 @@ try:
     # Save the Document to a docx file with the current date in the name
     file_name = fr'C:\Users\Novo\Noticias\data\Netsecurity_{current_date}.docx'
     doc.save(file_name)
+    
+    # Print the number of news added
+    print(f"[Helpnetsecurity] Número Total de Notícias novas: {news_count}")
 
 except Exception as e:
     print(f"An error occurred: {e}")
