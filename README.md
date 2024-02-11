@@ -6,6 +6,6 @@ Requirements:
 
 Change the output files location in both scripts.
 
-Run menu.py
+cmd> python menu.py
 
 The news will be extracted to a .docx file in data folder.
